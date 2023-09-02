@@ -1,9 +1,8 @@
 package be.ucll.campus.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "gebouw")
@@ -13,6 +12,9 @@ public class Gebouw {
     private String naam;
     private String adres;
     private Integer parkeerplaats;
+    @OneToMany
+    private List<Lokaal> lokalen = new ArrayList<>();
+
 
     protected Gebouw() {
         this("","",0);
@@ -59,4 +61,7 @@ public class Gebouw {
     }
 
 
+    public void voegLokaalToe(Lokaal lokaal) {
+        this.lokalen.add(lokaal);
+    }
 }

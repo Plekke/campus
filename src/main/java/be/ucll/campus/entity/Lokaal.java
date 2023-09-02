@@ -14,10 +14,10 @@ public class Lokaal {
     private String wie;
     private int verdieping;
 
-    protected Lokaal(){this(0L,"","",0,"",0);}
+    protected Lokaal(){this("","",0,"",0);}
 
-    public Lokaal(Long id, String naam, String lokaalType, int capaciteit, String wie, int verdieping) {
-        Id = id;
+    public Lokaal(String naam, String lokaalType, int capaciteit, String wie, int verdieping) {
+
         this.naam = naam;
         this.lokaalType = lokaalType;
         this.capaciteit = capaciteit;

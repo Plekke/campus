@@ -18,7 +18,7 @@ public class LokaalService {
     }
 
     public void addLokaal(int id, String naam, String lokaalType, int capaciteit, String wie, int verdieping) {
-        this.lokaalRepository.save(new Lokaal((long) id, naam, lokaalType, capaciteit, wie, verdieping));
+        this.lokaalRepository.save(new Lokaal( naam, lokaalType, capaciteit, wie, verdieping));
     }
 
     private void addLokaal(Lokaal lokaal) {

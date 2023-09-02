@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 public class LokaalController {
-    @Autowired
-    private LokaalRepository lokaalRepo;
-
+    /*@Autowired
+    private LokaalRepository lokaalRepo;*/
+/*
     @GetMapping("/{id}")
     public Lokaal findLokaal(@PathVariable("id") Integer id){
         return lokaalRepo.getLokaal(id);
@@ -37,5 +37,5 @@ public class LokaalController {
         Lokaal lokaal = lokaalRepo.getLokaal(id);
         lokaalRepo.deleteLokaal(id);
         return lokaal;
-    }
+    }*/
 }

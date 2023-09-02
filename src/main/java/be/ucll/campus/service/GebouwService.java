@@ -15,8 +15,18 @@ public class GebouwService {
         this.gebouwRepository = gebouwRepository;
     }
 
-    public void addGebouw(String naam, String adres, int parkeerplaats, int aantalLokalen) {
-        this.gebouwRepository.addGebouw(new Gebouw(naam, adres, parkeerplaats, aantalLokalen));
+    public void addGebouw(String naam, String adres, int parkeerplaats) {
+        this.gebouwRepository.save(new Gebouw(naam, adres, parkeerplaats));
+    }
+    public void addGebouw(Gebouw gebouw) {
+        this.gebouwRepository.save(gebouw);
+    }
+    public Gebouw findGebouw(String naam){
+        return gebouwRepository.findById(naam).get();
+    }
+
+    public Iterable<Gebouw> getAllgebouwen(){
+        return gebouwRepository.findAll();
     }
 
 }

@@ -9,11 +9,5 @@ import java.util.List;
 
 public interface LokaalRepository extends CrudRepository<Lokaal,Long> {
 
-    List<Lokaal> getAllLokalen();
-    void addLokaal(Lokaal lokaal);
-    public Lokaal getLokaal(Integer id);
-
-    public void updateLokaal(Integer id, Lokaal lokaal);
-    public void deleteLokaal(int id);
 
 }

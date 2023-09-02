@@ -12,21 +12,17 @@ public class Gebouw {
     @Id
     private String naam;
     private String adres;
-    private int parkeerplaats;
-    @Column(name = "aantal_lokalen")
-    private int aantalLokalen;
-
-
+    private Integer parkeerplaats;
 
     protected Gebouw() {
-        this("","",0,0);
+        this("","",0);
     }
 
-    public Gebouw(String naam, String adres, int parkeerplaats, int aantalLokalen) {
+    public Gebouw(String naam, String adres, int parkeerplaats) {
         this.naam = naam;
         this.adres = adres;
         this.parkeerplaats = parkeerplaats;
-        this.aantalLokalen = aantalLokalen;
+
     }
 
     @Override
@@ -35,7 +31,6 @@ public class Gebouw {
                 "naam='" + naam + '\'' +
                 ", adres='" + adres + '\'' +
                 ", parkeerplaats=" + parkeerplaats +
-                ", aantalLokalen=" + aantalLokalen +
                 '}';
     }
 
@@ -63,11 +58,5 @@ public class Gebouw {
         this.parkeerplaats = parkeerplaats;
     }
 
-    public int getAantalLokalen() {
-        return aantalLokalen;
-    }
 
-    public void setAantalLokalen(int aantalLokalen) {
-        this.aantalLokalen = aantalLokalen;
-    }
 }

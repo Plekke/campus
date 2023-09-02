@@ -2,6 +2,7 @@ package be.ucll.campus.controller;
 
 import be.ucll.campus.entity.Gebouw;
 import be.ucll.campus.repository.GebouwRepository;
+import be.ucll.campus.service.GebouwService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,34 +13,36 @@ import java.util.List;
 public class GebouwController {
 
     @Autowired
-    private GebouwRepository gebouwRepo;
+    private GebouwService gebouwService;
 
     @GetMapping("/{id}")
-    public Gebouw findGebouw(@PathVariable("id") Integer id){
-        return gebouwRepo.getGebouw(id);
+    public Gebouw findGebouw(@PathVariable("id") String naam){
+        return gebouwService.findGebouw(naam);
     }
 
     @GetMapping("/")
-    public List<Gebouw> getAllgebouwen(){
-        return gebouwRepo.getAllGebouwen();
+    public Iterable<Gebouw> getAllgebouwen(){
+        return gebouwService.getAllgebouwen();
     }
 
     @PostMapping("/")
     public Gebouw createGebouw(@RequestBody Gebouw gebouw){
-        gebouwRepo.addGebouw(gebouw);
+        gebouwService.addGebouw(gebouw);
         return gebouw;
     }
     @PutMapping("/{id}")
     public Gebouw updateGebouw(@RequestBody Gebouw gebouw, @PathVariable("id") Integer id){
-        gebouwRepo.updateGebouw(id,gebouw);
+        //gebouwRepo.save(id,gebouw); TODO
         return gebouw;
     }
 
-    @DeleteMapping("/{id}")
+   /* @DeleteMapping("/{id}")
     public Gebouw updateGebouw(@PathVariable("id") Integer id){
-        Gebouw gebouw = gebouwRepo.getGebouw(id);
-        gebouwRepo.deleteGebouw(id);
+       *//* Gebouw gebouw = gebouwRepo.getGebouw(id);
+        gebouwRepo.deleteGebouw(id);*//* //TODO
         return gebouw;
-    }
+    }*/
+
+
 
 }

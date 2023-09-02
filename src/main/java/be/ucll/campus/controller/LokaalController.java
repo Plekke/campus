@@ -1,6 +1,5 @@
 package be.ucll.campus.controller;
 
-import be.ucll.campus.entity.Gebouw;
 import be.ucll.campus.entity.Lokaal;
 import be.ucll.campus.repository.LokaalRepository;
 import org.springframework.beans.factory.annotation.Autowired;

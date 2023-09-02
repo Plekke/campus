@@ -8,14 +8,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class LokaalService {
     @Autowired
-    public final LokaalRepository repo;
+    private LokaalRepository lokaalRepository;
 
-    public LokaalService(LokaalRepository repo) {
-        this.repo = repo;
+    public LokaalService(LokaalRepository lokaalRepository) {
+        this.lokaalRepository = lokaalRepository;
     }
 
     public void addLokaal(int id, String naam, String lokaalType, int capaciteit, String wie, int verdieping) {
-        this.repo.addLokaal(new Lokaal(id, naam, lokaalType, capaciteit, wie, verdieping));
+        this.lokaalRepository.addLokaal(new Lokaal((long) id, naam, lokaalType, capaciteit, wie, verdieping));
     }
 
     private void addLokaal(Lokaal lokaal) {

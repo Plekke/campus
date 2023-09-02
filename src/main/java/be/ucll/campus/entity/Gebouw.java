@@ -3,8 +3,10 @@ package be.ucll.campus.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "gebouw")
 public class Gebouw {
 
     @Id
@@ -13,6 +15,7 @@ public class Gebouw {
     private int parkeerplaats;
     @Column(name = "aantal_lokalen")
     private int aantalLokalen;
+
 
 
     protected Gebouw() {

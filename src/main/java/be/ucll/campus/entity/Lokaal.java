@@ -1,17 +1,22 @@
 package be.ucll.campus.entity;
 
-public class Lokaal {
+import javax.persistence.*;
 
-    private int Id;
+@Entity
+@Table(name = "lokaal")
+public class Lokaal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long Id;
     private String naam;
     private String lokaalType;
     private int capaciteit;
     private String wie;
     private int verdieping;
 
-    protected Lokaal(){this(0,"","",0,"",0);}
+    protected Lokaal(){this(0L,"","",0,"",0);}
 
-    public Lokaal(int id, String naam, String lokaalType, int capaciteit, String wie, int verdieping) {
+    public Lokaal(Long id, String naam, String lokaalType, int capaciteit, String wie, int verdieping) {
         Id = id;
         this.naam = naam;
         this.lokaalType = lokaalType;
@@ -32,11 +37,7 @@ public class Lokaal {
                 '}';
     }
 
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
+    public void setId(Long id) {
         Id = id;
     }
 

@@ -2,6 +2,7 @@ package be.ucll.campus;
 
 import be.ucll.campus.entity.Gebouw;
 import be.ucll.campus.repository.AppConfig;
+import be.ucll.campus.repository.GebouwRepository;
 import be.ucll.campus.service.GebouwService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,8 @@ import javax.persistence.Persistence;
 public class CampusApplication {
 
 	public static void main(String[] args) {
+
+
 
 		/*EntityManagerFactory factory =
 				Persistence.createEntityManagerFactory("campus");

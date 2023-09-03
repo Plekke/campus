@@ -1,6 +1,9 @@
 package be.ucll.campus.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +20,7 @@ public class Gebouw {
 
 
     protected Gebouw() {
-        this("","",0);
+        this("", "", 0);
     }
 
     public Gebouw(String naam, String adres, int parkeerplaats) {
@@ -63,5 +66,6 @@ public class Gebouw {
 
     public void voegLokaalToe(Lokaal lokaal) {
         this.lokalen.add(lokaal);
+
     }
 }

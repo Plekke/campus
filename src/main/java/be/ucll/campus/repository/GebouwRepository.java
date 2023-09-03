@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface GebouwRepository extends CrudRepository<Gebouw,String> {
 
-    
 
 }

@@ -14,7 +14,12 @@ public class Lokaal {
     private String wie;
     private int verdieping;
 
-    protected Lokaal(){this("","",0,"",0);}
+    @ManyToOne
+    private Gebouw gebouw;
+
+    protected Lokaal() {
+        this("", "", 0, "", 0);
+    }
 
     public Lokaal(String naam, String lokaalType, int capaciteit, String wie, int verdieping) {
 

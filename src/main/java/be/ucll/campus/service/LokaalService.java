@@ -1,6 +1,5 @@
 package be.ucll.campus.service;
 
-import be.ucll.campus.entity.Gebouw;
 import be.ucll.campus.entity.Lokaal;
 import be.ucll.campus.repository.GebouwRepository;
 import be.ucll.campus.repository.LokaalRepository;
@@ -21,7 +20,7 @@ public class LokaalService {
     }
 
     public void addLokaal(int id, String naam, String lokaalType, int capaciteit, String wie, int verdieping) {
-        this.lokaalRepository.save(new Lokaal( naam, lokaalType, capaciteit, wie, verdieping));
+        this.lokaalRepository.save(new Lokaal(naam, lokaalType, capaciteit, wie, verdieping));
     }
 
     public Lokaal addLokaal(Lokaal lokaal) {
@@ -29,13 +28,14 @@ public class LokaalService {
 
         return lokaal;
     }
-    public Lokaal findLokaal(Long id){
+
+    public Lokaal findLokaal(Long id) {
         return lokaalRepository.findById(id).get();
     }
-    public Iterable<Lokaal> getAllLokalen(){
+
+    public Iterable<Lokaal> getAllLokalen() {
         return lokaalRepository.findAll();
     }
-
 
 
 }
